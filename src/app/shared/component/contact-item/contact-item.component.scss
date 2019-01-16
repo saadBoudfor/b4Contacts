@@ -1,6 +1,8 @@
 :host {
   display: block;
 }
+$primary: #336a86;
+$secondary: #8fafc4;
 
 div.contact.item {
   position: relative;
@@ -10,25 +12,31 @@ div.contact.item {
     position: relative;
     z-index: 1;
     div.image.wrapper {
-      padding: 12px;
-      span.text {
+      width: 80px;
+      display: flex;
+      div.text {
         font-weight: 600;
         color: #fffcfc;
-        height: 50px;
-        width: 50px;
-        padding: 8px;
-        background: #ddd;
+        height: 40px;
+        width: 40px;
+        background: $primary;
         border-radius: 50%;
+        display: flex;
+        margin: auto;
+        p {
+          margin: auto;
+          text-align: center;
+        }
       }
     }
     div.content.wrapper {
       width: 100%;
       padding: 12px 12px 12px 2px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #dddddd;
       i.icon {
         float: right;
         font-size: 24px;
-        color: #ddd;
+        color: $primary;
       }
     }
     &.left {
@@ -42,7 +50,7 @@ div.contact.item {
   }
   div.back {
     display: flex;
-    background: darkgreen;
+    background: $secondary;
     padding: 12px;
     justify-content: flex-end;
     position: absolute;
@@ -55,6 +63,9 @@ div.contact.item {
       color: white;
       margin-left: 15px;
       font-weight: 300;
+      &.fa-phone {
+        font-weight: 600;
+      }
     }
   }
 }

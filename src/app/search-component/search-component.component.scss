@@ -1,9 +1,10 @@
 :host {
   display: block;
 }
+$primary: #336a86;
 
 div.wrapper.input{
-  border: 1px solid #dddddd;
+  border: 1px solid $primary;
   padding: 12px;
   position: relative;
   display: flex;
@@ -16,6 +17,6 @@ div.wrapper.input{
   }
   i.fas {
     font-size: 18px;
-    color: #ddd;
+    color: $primary;
   }
 }

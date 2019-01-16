@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalHandlerService} from "../../../modal-handler.service";
+import {ModalHandlerService} from "../../../services/modal-handler.service";
 
 @Component({
   selector: 'modal',

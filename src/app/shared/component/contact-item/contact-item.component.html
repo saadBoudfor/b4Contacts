@@ -5,7 +5,7 @@
        (swipeRight)="onSwipeRight($event)"
        (click)="onItemClick()" (dblclick)="onItemDbClick()">
     <div class="image wrapper">
-      <span class="text">{{icon}}</span>
+      <div class="text" [style.background]="color"><p>{{icon}}</p></div>
     </div>
     <div class="content wrapper">
       <span class="text">{{content}}</span>

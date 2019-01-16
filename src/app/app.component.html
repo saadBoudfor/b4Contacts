@@ -11,8 +11,12 @@
   <search-input></search-input>
 </div>
 
-<ng-container *ngFor="let elt of [1,2,3,7,9,0,22,22]">
-  <list-view-item (actionClickedEvent) = onClick($event)
+<ng-container *ngFor="let contact of contactList">
+  <list-view-item
+                [content] = contactHandler.getFullName(contact)
+                [icon] = contactHandler.getInitial(contact)
+                [actions] = actions
+                (actionClickedEvent) = onClick($event)
                 (itemClickedEvent)= onContactClick($event)
                 (itemDbClickedEvent) = onContactDbClick($event)></list-view-item>
 </ng-container>
