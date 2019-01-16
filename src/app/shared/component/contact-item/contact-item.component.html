@@ -1,0 +1,20 @@
+<div class="contact item">
+  <div class="front"
+       [ngClass]="{'left': swipeToLeft, 'right': !swipeToLeft}"
+       (swipeLeft)="onSwipeLeft($event)"
+       (swipeRight)="onSwipeRight($event)"
+       (click)="onItemClick()" (dblclick)="onItemDbClick()">
+    <div class="image wrapper">
+      <span class="text">{{icon}}</span>
+    </div>
+    <div class="content wrapper">
+      <span class="text">{{content}}</span>
+      <i class="icon fas fa-mobile-alt"></i>
+    </div>
+  </div>
+  <div class="back">
+    <ng-container *ngFor="let action of actions">
+      <i class="{{'icon fas fa-'+action.icon}}" (click) = onActionClick(action.name)></i>
+    </ng-container>
+  </div>
+</div>

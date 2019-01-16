@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+
+div.contact.item {
+  position: relative;
+  div.front {
+    display: flex;
+    background: white;
+    position: relative;
+    z-index: 1;
+    div.image.wrapper {
+      padding: 12px;
+      span.text {
+        font-weight: 600;
+        color: #fffcfc;
+        height: 50px;
+        width: 50px;
+        padding: 8px;
+        background: #ddd;
+        border-radius: 50%;
+      }
+    }
+    div.content.wrapper {
+      width: 100%;
+      padding: 12px 12px 12px 2px;
+      border-bottom: 1px solid #ddd;
+      i.icon {
+        float: right;
+        font-size: 24px;
+        color: #ddd;
+      }
+    }
+    &.left {
+      left: -140px;
+      transition: all 0.5s ease-in-out;
+    }
+    &.right {
+      left: 0;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  div.back {
+    display: flex;
+    background: darkgreen;
+    padding: 12px;
+    justify-content: flex-end;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    i.icon {
+      font-size: 24px;
+      color: white;
+      margin-left: 15px;
+      font-weight: 300;
+    }
+  }
+}
