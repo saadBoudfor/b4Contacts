@@ -2,8 +2,17 @@
 
 @import "libs/reset";
 @import "libs/fonts";
+$secondary: #8fafc4;
 
 
 body {
   margin: 0;
+}
+
+::placeholder {
+  color: $secondary;
+}
+
+input {
+  color: $secondary;
 }

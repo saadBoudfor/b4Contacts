@@ -1,35 +1,18 @@
 $primary: #336a86;
 
-
-div.container {
-  padding: 12px;
-  div.header {
-    div.element{
-      display: flex;
-      justify-content: flex-end;
-      i.fas {
-        font-size: 24px;
-        color: $primary;
-      }
-    }
-    div.title.wrapper {
-      width: 100%;
-      text-align: center;
-      h4.text {
-        font-weight: 700;
-        font-size: 18px;
-        color: $primary;
-      }
-    }
+div.contact-page {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  contact-view {
+    overflow: scroll;
   }
-  search-input {
-    margin-top: 20px;
-    margin-bottom: 20px;
+
+  mobile-nav {
+    bottom: 0;
+    width: 100%;
   }
 }
 
-mobile-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+
+

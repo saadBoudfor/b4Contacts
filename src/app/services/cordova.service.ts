@@ -9,12 +9,12 @@ export class CordovaService {
 
   constructor(public contactHandler: ContacthandlerService) { }
 
-  getContacts(searchString: string): Array<Contact> {
+  getContacts(searchString: string, max: number = 20): Array<Contact> {
     let result = this.data;
     if(searchString) {
       result = result.filter((elt)=> this.contactHandler.getFullName(elt).indexOf(searchString) !== -1);
     }
-    return result.slice(0, 10);
+    return result.slice(0, max);
   }
 
   private data: Array<Contact> = [

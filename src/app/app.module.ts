@@ -1,11 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import { ListViewItemComponent } from './shared/component/contact-item/contact-item.component';
-import { SearchComponentComponent } from './search-component/search-component.component';
+import { SearchComponentComponent } from './shared/component/search-component/search-component.component';
 import { MobileNavComponent } from './shared/widgets/mobile-nav/mobile-nav.component';
 import { ModalComponent } from './shared/widgets/modal/modal.component';
+import {ContactViewComponent} from "./shared/widgets/contact-view/contact-view.component";
+import {SearchHeaderComponent} from "./search-header/search-header.component";
+import {HammerConf} from "./conf/HammerConf";
 
 @NgModule({
   declarations: [
@@ -13,12 +16,17 @@ import { ModalComponent } from './shared/widgets/modal/modal.component';
     ListViewItemComponent,
     SearchComponentComponent,
     MobileNavComponent,
-    ModalComponent
+    ModalComponent,
+    ContactViewComponent,
+    SearchHeaderComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [        {
+    provide: HAMMER_GESTURE_CONFIG,
+    useClass: HammerConf
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

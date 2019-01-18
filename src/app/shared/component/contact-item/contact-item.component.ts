@@ -60,7 +60,7 @@ export class ListViewItemComponent implements OnInit{
   }
 }
 
-interface Action {
+export interface Action {
   icon?: string;
   name?: string;
   color?: string;

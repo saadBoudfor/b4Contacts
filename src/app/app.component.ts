@@ -3,7 +3,7 @@ import {ModalHandlerService} from "./services/modal-handler.service";
 import {CordovaService} from "./services/cordova.service";
 import {ContacthandlerService} from "./services/contacthandler.service";
 import {Contact} from "./Models/Contact";
-import {Action} from "rxjs/internal/scheduler/Action";
+import {Action} from "./shared/component/contact-item/contact-item.component";
 
 @Component({
   selector: 'app-root',

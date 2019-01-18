@@ -1,26 +1,9 @@
+<div class="contact-page">
+  <search-header></search-header>
 
-<div class="container">
-  <div class="header">
-    <div class="element">
-      <i class="fas fa-history"></i>
-    </div>
-    <div class="title wrapper">
-      <h4 class="text">Mes contacts</h4>
-    </div>
-  </div>
-  <search-input></search-input>
+  <contact-view></contact-view>
+
+  <mobile-nav></mobile-nav>
 </div>
-
-<ng-container *ngFor="let contact of contactList">
-  <list-view-item
-                [content] = contactHandler.getFullName(contact)
-                [icon] = contactHandler.getInitial(contact)
-                [actions] = actions
-                (actionClickedEvent) = onClick($event)
-                (itemClickedEvent)= onContactClick($event)
-                (itemDbClickedEvent) = onContactDbClick($event)></list-view-item>
-</ng-container>
-
-<mobile-nav></mobile-nav>
-
 <modal *ngIf="showModal"></modal>
+

@@ -3,7 +3,7 @@
        [ngClass]="{'left': swipeToLeft, 'right': !swipeToLeft}"
        (swipeLeft)="onSwipeLeft($event)"
        (swipeRight)="onSwipeRight($event)"
-       (click)="onItemClick()" (dblclick)="onItemDbClick()">
+       (click)="onItemClick()">
     <div class="image wrapper">
       <div class="text" [style.background]="color"><p>{{icon}}</p></div>
     </div>
