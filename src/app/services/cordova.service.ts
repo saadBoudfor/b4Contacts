@@ -1,23 +1,34 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Contact} from "../Models/Contact";
 import {ContacthandlerService} from "./contacthandler.service";
+import {BehaviorSubject} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class CordovaService {
 
-  constructor(public contactHandler: ContacthandlerService) { }
+  public searchString = new BehaviorSubject('');
+  private DEViCE_READY_EVENT = 'deviceready';
+  private _navigator = window.navigator;
 
-  getContacts(searchString: string, max: number = 20): Array<Contact> {
-    let result = this.data;
-    if(searchString) {
-      result = result.filter((elt)=> this.contactHandler.getFullName(elt).indexOf(searchString) !== -1);
-    }
-    return result.slice(0, max);
+  constructor(public contactHandler: ContacthandlerService) {
   }
 
-  private data: Array<Contact> = [
+  getContacts(onGetContacts: any) {
+    if (environment.production) {
+      document.addEventListener(this.DEViCE_READY_EVENT, () => {
+        onGetContacts(this._navigator['contacts']);
+      }, false);
+    } else {
+      onGetContacts(this.mockContacts);
+    }
+  }
+
+  private mockContacts: Array<Contact> = [
     {
       "_id": "5c3f8681833d8775b4a677f2",
       "avatar": "http://placehold.it/32x32",

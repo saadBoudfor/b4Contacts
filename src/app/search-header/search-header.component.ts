@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CordovaService} from "../services/cordova.service";
 
 @Component({
   selector: 'search-header',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cordovaService: CordovaService) {
+  }
 
   ngOnInit() {
+  }
+
+  getSearchString(value) {
+    this.cordovaService.searchString.next(value);
   }
 
 }

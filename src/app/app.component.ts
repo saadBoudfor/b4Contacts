@@ -19,23 +19,8 @@ export class AppComponent implements OnInit {
     {icon: 'edit', name: 'modify', color: 'green'}
   ];
 
-  constructor(private modalHandler: ModalHandlerService,
-              private cordovaHandler: CordovaService,
-              public contactHandler: ContacthandlerService) {
+  constructor(private modalHandler: ModalHandlerService) {
     this.modalHandler.init();
-    this.contactList = cordovaHandler.getContacts(null);
-  }
-
-  onClick(action) {
-    alert(action + 'clicked!');
-  }
-
-  onContactClick() {
-    alert('contact clicked!');
-  }
-
-  onContactDbClick() {
-    alert('contact double click !');
   }
 
   ngOnInit(): void {
