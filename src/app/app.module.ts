@@ -9,6 +9,8 @@ import { ModalComponent } from './shared/widgets/modal/modal.component';
 import {ContactViewComponent} from "./shared/widgets/contact-view/contact-view.component";
 import {SearchHeaderComponent} from "./search-header/search-header.component";
 import {HammerConf} from "./conf/HammerConf";
+import { ContactScreenComponent } from './shared/screen/contact-screen/contact-screen.component';
+import { ContactDetailScreenComponent } from './shared/screen/contact-detail-screen/contact-detail-screen.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {HammerConf} from "./conf/HammerConf";
     MobileNavComponent,
     ModalComponent,
     ContactViewComponent,
-    SearchHeaderComponent
+    SearchHeaderComponent,
+    ContactScreenComponent,
+    ContactDetailScreenComponent
   ],
   imports: [
     BrowserModule

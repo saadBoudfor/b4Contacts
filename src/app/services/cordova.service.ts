@@ -20,7 +20,12 @@ export class CordovaService {
 
   getContacts(onGetContacts: any) {
     if (environment.production) {
+      console.log('contacts: ');
+      console.log(this._navigator['contacts']);
+      onGetContacts(this._navigator['contacts']);
       document.addEventListener(this.DEViCE_READY_EVENT, () => {
+        console.log('device connect !! ');
+        console.log(this._navigator['contacts']);
         onGetContacts(this._navigator['contacts']);
       }, false);
     } else {
