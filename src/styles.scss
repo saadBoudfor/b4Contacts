@@ -7,6 +7,8 @@ $secondary: #8fafc4;
 
 body {
   margin: 0;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 ::placeholder {
@@ -15,4 +17,20 @@ body {
 
 input {
   color: $secondary;
+}
+.container {
+  padding: 14px;
+}
+
+.flex {
+  display: flex;
+  &.left {
+    justify-content: flex-end;
+  }
+  &.right {
+    justify-content: flex-start;
+  }
+  &.center {
+    justify-content: center;
+  }
 }

@@ -1,0 +1,85 @@
+$circle-size: 120px;
+$primary: #336a86;
+$secondary: #8fafc4;
+$white: white;
+$gray: #ddd;
+
+header {
+  box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+  padding-bottom: 30px;
+  button {
+    background: $white;
+    color: darken($gray, 30%);
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover {
+      background: darken($gray, 30%);
+      color: $white;
+    }
+  }
+  div.wrapper.image {
+    background: $primary;
+    color: white;
+    border-radius: 50%;
+    width: $circle-size;
+    height: $circle-size;
+    p.title {
+      margin: auto;
+      text-align: center;
+      font-size: 35px;
+      font-weight: bold;
+    }
+  }
+}
+
+main {
+  padding-top: 20px;
+  font-size: 14px;
+  h4.title {
+    padding: 14px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  div.row {
+    span.label {
+      font-weight: bold;
+      min-width: 120px;
+      word-break: break-all;
+    }
+    span.value {
+      margin-left: 5px;
+      i.prefix {
+        color: $primary;
+      }
+    }
+    border-bottom: 1px solid #dddddd;
+  }
+  div.button {
+      button {
+        width: 100%;
+        padding: 10px;
+        background: $primary;
+        color: $white;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+      }
+  }
+  section {
+    div.card {
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+      padding: 12px;
+      margin-bottom: 5px;
+      i {
+        float: right;
+        color: darken($gray, 30%);
+        font-size: 12px;
+      }
+      h6 {
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

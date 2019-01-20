@@ -1,3 +1,61 @@
-<p>
-  contact-detail-screen works!
-</p>
+<header class="container">
+  <div class="flex left">
+    <button>
+      Modifier <i class="fas fa-pen"></i>
+    </button>
+  </div>
+  <div class="flex center">
+    <div class="flex wrapper image">
+      <p class="title">BD</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h4 class="section title">
+      Informations Personnelles:
+    </h4>
+    <div class="row container flex">
+      <span class="label">Nom </span>
+      <span class="value">BOUDFOR</span>
+    </div>
+    <div class="row container flex">
+      <span class="label">Prénom </span>
+      <span class="value">Saâd</span>
+    </div>
+    <div class="row container flex">
+      <span class="label">Portable </span>
+      <span class="value"><i class="prefix">(+33)</i> 0 7 51 64 22 65</span>
+    </div>
+    <div class="row container flex">
+      <span class="label">Adresse mail </span>
+      <span class="value">sboudfor@gmail.com</span>
+    </div>
+    <div class="row container flex">
+      <span class="label">Adresse postale  </span>
+      <span class="value">7 rue des amaryllis, 34070 Montpellier</span>
+    </div>
+
+    <div class="button container">
+      <button> Contacter</button>
+    </div>
+  </section>
+  <section class="container">
+    <h4 class="section title">
+      Mes notes:
+    </h4>
+    <div class="card" *ngFor="let a of [1,2,3,3]">
+      <i class="fas fa-pen"></i>
+      <h6>Rédiger le tipe avant fevrier</h6>
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dolore doloribus ex
+        maxime officiis omnis quam qui ratione sit temporibus.
+      </p>
+    </div>
+    <div class="button">
+      <button><i class="fas fa-plus"></i></button>
+    </div>
+  </section>
+</main>
+
