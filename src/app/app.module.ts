@@ -7,8 +7,8 @@ import { SearchComponentComponent } from './shared/component/search-component/se
 import { MobileNavComponent } from './shared/widgets/mobile-nav/mobile-nav.component';
 import { ModalComponent } from './shared/widgets/modal/modal.component';
 import {ContactViewComponent} from "./shared/widgets/contact-view/contact-view.component";
-import {SearchHeaderComponent} from "./search-header/search-header.component";
-import {HammerConf} from "./conf/HammerConf";
+import {SearchHeaderComponent} from "./shared/widgets/search-header/search-header.component";
+import {HammerConf} from "./services/conf/HammerConf";
 import { ContactScreenComponent } from './shared/screen/contact-screen/contact-screen.component';
 import { ContactDetailScreenComponent } from './shared/screen/contact-detail-screen/contact-detail-screen.component';
 

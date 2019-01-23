@@ -5,10 +5,13 @@
        (swipeRight)="onSwipeRight($event)"
        (click)="onItemClick()">
     <div class="image wrapper">
-      <div class="text" [style.background]="color"><p>{{icon}}</p></div>
+      <div class="text" [style.background]="color">
+        <i *ngIf="icon !== ''">{{icon}}</i>
+        <i *ngIf="icon === ''" class="fas fa-user"></i>
+      </div>
     </div>
-    <div class="content wrapper">
-      <span class="text">{{content}}</span>
+    <div class="content wrapper flex">
+      <div class="text"><p>{{content}}</p></div>
       <i class="icon fas fa-mobile-alt"></i>
     </div>
   </div>

@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ContacthandlerService} from "../../../services/contacthandler.service";
-import {CordovaService} from "../../../services/cordova.service";
-import {Action} from "../../component/contact-item/contact-item.component";
-import {Contact} from "../../../Models/Contact";
+import {ContactHandlerService} from "../../../services/handlers/contacthandler.service";
+import {CordovaService} from "../../../services/handlers/cordova.service";
+import {Action} from "../../../services/models/Action";
+import {Contact} from "../../../services/models/Contact";
+import {CoreService} from "../../../services/handlers/core.service";
 
 @Component({
   selector: 'contact-view',
@@ -10,32 +11,30 @@ import {Contact} from "../../../Models/Contact";
   styleUrls: ['./contact-view.component.scss']
 })
 export class ContactViewComponent implements OnInit {
+  public contactListSearching: Array<Contact>;
   public contactList: Array<Contact>;
+  public isSearching = false;
   public actions: Array<Action> = [
     {icon: 'phone', name: 'call', color: 'green'},
     {icon: 'eye ', name: 'see', color: 'green'},
     {icon: 'edit', name: 'modify', color: 'green'}
   ];
 
-  constructor(private cordovaHandler: CordovaService,
-              public contactHandler: ContacthandlerService) {
+  constructor(public contactHandler: ContactHandlerService) {
   }
 
   ngOnInit() {
-    this.cordovaHandler.searchString.subscribe((currentValue) => {
-      this.cordovaHandler.getContacts((contacts) => {
-        if (currentValue === "") {
+    CoreService.searchString.subscribe(searchString => {
+      this.contactHandler.contacts.subscribe((contacts) => {
+        if (searchString === '') {
+          this.isSearching = false;
           this.contactList = contacts;
         } else {
-          this.contactList = contacts
-            .filter((elt) => this.contactHandler
-              .getFullName(elt)
-              .toUpperCase()
-              .trim()
-              .indexOf(currentValue.toUpperCase().trim()) !== -1);
+          this.isSearching = true;
+          this.contactListSearching = contacts.filter(this.contactHandler.filter(searchString));
         }
       });
-    })
+    });
   }
 
   onClick(action) {

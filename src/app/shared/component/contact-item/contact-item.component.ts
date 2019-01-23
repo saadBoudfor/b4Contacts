@@ -1,4 +1,5 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+import {Action} from "../../../services/models/Action";
 
 @Component({
   selector: 'list-view-item',
@@ -60,8 +61,3 @@ export class ListViewItemComponent implements OnInit{
   }
 }
 
-export interface Action {
-  icon?: string;
-  name?: string;
-  color?: string;
-}

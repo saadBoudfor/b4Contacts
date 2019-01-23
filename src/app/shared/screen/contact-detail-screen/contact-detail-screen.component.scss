@@ -11,10 +11,9 @@ header {
     background: $white;
     color: darken($gray, 30%);
     font-size: 13px;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 5px 10px;
     &:hover {
-      background: darken($gray, 30%);
+      background:  $secondary;
       color: $white;
     }
   }

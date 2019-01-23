@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CordovaService} from "../../../services/handlers/cordova.service";
 
 @Component({
   selector: 'contact-screen',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cordovaService: CordovaService) { }
 
   ngOnInit() {
+    this.cordovaService.init();
   }
 
 }

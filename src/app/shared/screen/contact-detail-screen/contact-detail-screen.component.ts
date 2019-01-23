@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CordovaService} from "../../../services/handlers/cordova.service";
 
 @Component({
   selector: 'contact-detail-screen',

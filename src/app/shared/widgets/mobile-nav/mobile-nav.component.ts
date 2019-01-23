@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ModalHandlerService} from "../../../services/modal-handler.service";
+import {ModalHandlerService} from "../../../services/handlers/modal-handler.service";
 
 @Component({
   selector: 'mobile-nav',
