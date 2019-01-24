@@ -1,5 +1,5 @@
 import {BrowserModule, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, ComponentFactoryResolver} from '@angular/core';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import { ListViewItemComponent } from './shared/component/contact-item/contact-item.component';
@@ -31,6 +31,7 @@ import { ContactDetailScreenComponent } from './shared/screen/contact-detail-scr
     provide: HAMMER_GESTURE_CONFIG,
     useClass: HammerConf
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ContactScreenComponent, ContactDetailScreenComponent]
 })
 export class AppModule { }

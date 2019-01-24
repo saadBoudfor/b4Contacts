@@ -39,7 +39,7 @@ export class ContactHandlerService {
     return this._contacts;
   }
 
-  filter(searchString: string) {
+  filterBySearchString(searchString: string) {
     return (contact: Contact) => {
       return this.getDisplayName(contact)
           .toLowerCase()

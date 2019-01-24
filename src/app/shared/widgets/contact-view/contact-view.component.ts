@@ -31,7 +31,7 @@ export class ContactViewComponent implements OnInit {
           this.contactList = contacts;
         } else {
           this.isSearching = true;
-          this.contactListSearching = contacts.filter(this.contactHandler.filter(searchString));
+          this.contactListSearching = contacts.filter(this.contactHandler.filterBySearchString(searchString));
         }
       });
     });
