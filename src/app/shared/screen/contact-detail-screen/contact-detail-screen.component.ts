@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {CordovaService} from "../../../services/handlers/cordova.service";
+import {ContactHandlerService} from "../../../services/handlers/contacthandler.service";
+import {Contact} from "../../../services/models/Contact";
 
 @Component({
   selector: 'contact-detail-screen',
@@ -8,9 +10,20 @@ import {CordovaService} from "../../../services/handlers/cordova.service";
 })
 export class ContactDetailScreenComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public contactID: string;
+
+  public contact: Contact;
+
+  constructor(public _contactHandler: ContactHandlerService) { }
 
   ngOnInit() {
+    console.log(this.contactID);
+    this.contact = this
+      ._contactHandler
+      .contacts
+      .getValue()
+      .filter(contact => contact.id === this.contactID)[0];
   }
 
 }

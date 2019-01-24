@@ -15,8 +15,14 @@ export class CoreService {
   }
 
   static searchString = new BehaviorSubject<string>('');
-  static currentPage = new BehaviorSubject<string>(CoreService.components.contacts_list);
+  static currentPage = new BehaviorSubject<any>({
+    id: CoreService.components.contacts_list,
+    params: null
+  });
 
+  static goTo(pageID, params = null) {
+    this.currentPage.next({id: pageID, params: params})
+  }
   static fieldNotNull(field: any) {
     return field && field.length != 0;
   }

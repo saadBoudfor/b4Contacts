@@ -6,8 +6,12 @@
   </div>
   <div class="flex center">
     <div class="flex wrapper image">
-      <p class="title">BD</p>
+      <p class="title">{{_contactHandler.getInitial(contact)}}</p>
     </div>
+  </div>
+
+  <div class="flex center title">
+    <p>{{contact.name.formatted}}</p>
   </div>
 </header>
 
@@ -18,19 +22,19 @@
     </h4>
     <div class="row container flex">
       <span class="label">Nom </span>
-      <span class="value">BOUDFOR</span>
+      <span class="value">{{contact.name.familyName}}</span>
     </div>
     <div class="row container flex">
       <span class="label">Prénom </span>
-      <span class="value">Saâd</span>
+      <span class="value">{{contact.name.givenName}}</span>
     </div>
     <div class="row container flex">
       <span class="label">Portable </span>
-      <span class="value"><i class="prefix">(+33)</i> 0 7 51 64 22 65</span>
+      <span class="value">{{contact.phoneNumbers[0]}}</span>
     </div>
     <div class="row container flex">
       <span class="label">Adresse mail </span>
-      <span class="value">sboudfor@gmail.com</span>
+      <span class="value">{{contact.emails[0]}}</span>
     </div>
     <div class="row container flex">
       <span class="label">Adresse postale  </span>
@@ -41,17 +45,29 @@
       <button> Contacter</button>
     </div>
   </section>
-  <section class="container">
+  <here-map
+    #map
+    appId="'j97vSu8svY8HdxOVyxbi'"
+    appCode="'fEZkHmrSVX5q12r0lnUPmA'"
+    lat="37.7397"
+    lng="-121.4252"
+    width="100%"
+    height="530px">
+  </here-map>
+  <section>
     <h4 class="section title">
       Mes notes:
     </h4>
-    <div class="card" *ngFor="let a of [1,2,3,3]">
-      <i class="fas fa-pen"></i>
-      <h6>Rédiger le tipe avant fevrier</h6>
-      <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dolore doloribus ex
-        maxime officiis omnis quam qui ratione sit temporibus.
-      </p>
+    <div class="container">
+      <div class="card" *ngFor="let a of [1,2,3,3]">
+        <i class="fas fa-pen"></i>
+        <h6>Rédiger le tipe avant fevrier</h6>
+        <p class="description">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dolore doloribus ex
+          maxime officiis omnis quam qui ratione sit temporibus.
+        </p>
+      </div>
+
     </div>
     <div class="button">
       <button><i class="fas fa-plus"></i></button>

@@ -5,6 +5,7 @@
       [content]=contactHandler.getDisplayName(contact)
       [icon]=contactHandler.getInitial(contact)
       [actions]=actions
+      [id]="contact.id"
       (actionClickedEvent)=onClick($event)
       (itemClickedEvent)=onContactClick($event)
       (itemDbClickedEvent)=onContactDbClick($event)></list-view-item>
@@ -16,6 +17,7 @@
       [content]=contactHandler.getDisplayName(contact)
       [icon]=contactHandler.getInitial(contact)
       [actions]=actions
+      [id]="contact.id"
       (actionClickedEvent)=onClick($event)
       (itemClickedEvent)=onContactClick($event)
       (itemDbClickedEvent)=onContactDbClick($event)></list-view-item>

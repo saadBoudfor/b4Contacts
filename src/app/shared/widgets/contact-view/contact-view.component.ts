@@ -38,11 +38,11 @@ export class ContactViewComponent implements OnInit {
   }
 
   onClick(action) {
-    alert(action + 'clicked!');
+   alert(action + 'clicked!');
   }
 
-  onContactClick() {
-    alert('contact clicked!');
+  onContactClick(contactID: string) {
+    CoreService.goTo(CoreService.components.contact_details, contactID);
   }
 
   onContactDbClick() {

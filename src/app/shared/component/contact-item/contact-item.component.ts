@@ -20,6 +20,9 @@ export class ListViewItemComponent implements OnInit{
   @Input()
   public actions: Action[] = [{icon: 'edit', name: 'edit', color: '#ddd'}];
 
+  @Input()
+  public id: string = '_id';
+
   @Output()
   public actionClickedEvent: EventEmitter<string> = new EventEmitter<string>();
 
@@ -49,7 +52,7 @@ export class ListViewItemComponent implements OnInit{
   }
 
   onItemClick() {
-    this.itemClickedEvent.emit();
+    this.itemClickedEvent.emit(this.id);
   }
 
   onItemDbClick() {

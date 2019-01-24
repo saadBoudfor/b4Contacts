@@ -23,12 +23,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._container.clear();
     CoreService.currentPage.subscribe(currentPage => {
-      this
+      this._container.clear();
+      const createdComponent = this
         ._container
-        .createComponent(this.resolver.resolveComponentFactory(this._componentMapper.get(currentPage)));
-
+        .createComponent(this.resolver.resolveComponentFactory(this._componentMapper.get(currentPage.id)));
+      createdComponent.instance['contactID'] = currentPage.params;
     });
     this.modalHandler.ModalOptions.subscribe((option) => {
       this.showModal = option.show;
