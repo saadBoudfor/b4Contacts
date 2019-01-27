@@ -1,5 +1,4 @@
 <div class="contact-list">
-  <ng-container *ngIf="!isSearching">
     <list-view-item
       *ngFor="let contact of contactList"
       [content]=contactHandler.getDisplayName(contact)
@@ -8,21 +7,7 @@
       [id]="contact.id"
       (actionClickedEvent)=onClick($event)
       (itemClickedEvent)=onContactClick($event)
-      (itemDbClickedEvent)=onContactDbClick($event)></list-view-item>
-  </ng-container>
-
-  <ng-container *ngIf="isSearching">
-    <list-view-item
-      *ngFor="let contact of contactListSearching"
-      [content]=contactHandler.getDisplayName(contact)
-      [icon]=contactHandler.getInitial(contact)
-      [actions]=actions
-      [id]="contact.id"
-      (actionClickedEvent)=onClick($event)
-      (itemClickedEvent)=onContactClick($event)
-      (itemDbClickedEvent)=onContactDbClick($event)></list-view-item>
-  </ng-container>
-
+    ></list-view-item>
 </div>
 
 

@@ -1,8 +1,6 @@
+@import "../../../../libs/variables";
+
 $circle-size: 120px;
-$primary: #336a86;
-$secondary: #8fafc4;
-$white: white;
-$gray: #ddd;
 
 header {
   box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
@@ -36,6 +34,10 @@ header {
 }
 
 main {
+  div#frugalmap {
+    height: 300px;
+    width: 100%
+  }
   padding-top: 20px;
   font-size: 14px;
   h4.title {
@@ -57,17 +59,7 @@ main {
     }
     border-bottom: 1px solid #dddddd;
   }
-  div.button {
-      button {
-        width: 100%;
-        padding: 10px;
-        background: $primary;
-        color: $white;
-        font-size: 16px;
-        font-weight: bold;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-      }
-  }
+
   section {
     div.card {
       box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
@@ -85,3 +77,4 @@ main {
     }
   }
 }
+

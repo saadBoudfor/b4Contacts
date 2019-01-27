@@ -2,8 +2,7 @@
 
 @import "libs/reset";
 @import "libs/fonts";
-$secondary: #8fafc4;
-
+@import "libs/variables";
 
 body {
   margin: 0;
@@ -32,5 +31,17 @@ input {
   }
   &.center {
     justify-content: center;
+  }
+}
+
+div.button {
+  button {
+    width: 100%;
+    padding: 10px;
+    background: $primary;
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
   }
 }

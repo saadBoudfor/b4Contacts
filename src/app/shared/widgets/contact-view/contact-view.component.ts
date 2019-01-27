@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 import {ContactHandlerService} from "../../../services/handlers/contacthandler.service";
-import {CordovaService} from "../../../services/handlers/cordova.service";
 import {Action} from "../../../services/models/Action";
 import {Contact} from "../../../services/models/Contact";
 import {CoreService} from "../../../services/handlers/core.service";
+import {ListViewAdapter} from "./ListViewAdapter";
 
 @Component({
   selector: 'contact-view',
@@ -11,9 +11,8 @@ import {CoreService} from "../../../services/handlers/core.service";
   styleUrls: ['./contact-view.component.scss']
 })
 export class ContactViewComponent implements OnInit {
-  public contactListSearching: Array<Contact>;
   public contactList: Array<Contact>;
-  public isSearching = false;
+  public contactWrapper: ListViewAdapter;
   public actions: Array<Action> = [
     {icon: 'phone', name: 'call', color: 'green'},
     {icon: 'eye ', name: 'see', color: 'green'},
@@ -26,27 +25,32 @@ export class ContactViewComponent implements OnInit {
   ngOnInit() {
     CoreService.searchString.subscribe(searchString => {
       this.contactHandler.contacts.subscribe((contacts) => {
+        const searchResult = contacts.filter(this.contactHandler.filterBySearchString(searchString));
         if (searchString === '') {
-          this.isSearching = false;
-          this.contactList = contacts;
-        } else {
-          this.isSearching = true;
-          this.contactListSearching = contacts.filter(this.contactHandler.filterBySearchString(searchString));
+          searchResult = contacts;
         }
+        this.contactWrapper = new ListViewAdapter(searchResult, 12);
+        this.contactList = this.contactWrapper.nextElement;
       });
     });
   }
 
+  @HostListener("window:scroll", [])
+  onScroll(): void {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      // you're at the bottom of the page
+      if (this.contactWrapper.hasNext) {
+        this.contactList = this.contactWrapper.nextElement;
+      }
+    }
+  }
+
   onClick(action) {
-   alert(action + 'clicked!');
+    alert(action + 'clicked!');
   }
 
   onContactClick(contactID: string) {
     CoreService.goTo(CoreService.components.contact_details, contactID);
-  }
-
-  onContactDbClick() {
-    alert('contact double click !');
   }
 
 }

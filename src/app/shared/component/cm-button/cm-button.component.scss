@@ -1,0 +1,17 @@
+@import "../../../../libs/variables";
+
+:host {
+  display: block;
+}
+
+div.default {
+  button {
+    width: 100%;
+    padding: 10px;
+    background: $primary;
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+}

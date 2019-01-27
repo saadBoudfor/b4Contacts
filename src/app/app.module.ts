@@ -1,5 +1,5 @@
 import {BrowserModule, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
-import {NgModule, ComponentFactoryResolver} from '@angular/core';
+import {NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import { ListViewItemComponent } from './shared/component/contact-item/contact-item.component';
@@ -11,6 +11,8 @@ import {SearchHeaderComponent} from "./shared/widgets/search-header/search-heade
 import {HammerConf} from "./services/conf/HammerConf";
 import { ContactScreenComponent } from './shared/screen/contact-screen/contact-screen.component';
 import { ContactDetailScreenComponent } from './shared/screen/contact-detail-screen/contact-detail-screen.component';
+import {HttpClientModule} from "@angular/common/http";
+import { CmButtonComponent } from './shared/component/cm-button/cm-button.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,13 @@ import { ContactDetailScreenComponent } from './shared/screen/contact-detail-scr
     ContactViewComponent,
     SearchHeaderComponent,
     ContactScreenComponent,
-    ContactDetailScreenComponent
+    ContactDetailScreenComponent,
+    CmButtonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
+
   ],
   providers: [        {
     provide: HAMMER_GESTURE_CONFIG,

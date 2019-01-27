@@ -1,15 +1,16 @@
-$primary: #336a86;
-
 div.contact-page {
   height: 100vh;
   display: flex;
   flex-flow: column;
   contact-view {
-    overflow: scroll;
+    margin-top: 166px;
   }
-
-  mobile-nav {
-    bottom: 0;
+  search-header {
+    height: 165px;
     width: 100%;
+    position: fixed;
+    z-index: 800;
+    top: 0;
+    background: white;
   }
 }
