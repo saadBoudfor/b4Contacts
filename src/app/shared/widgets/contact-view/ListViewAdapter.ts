@@ -19,7 +19,6 @@ export class ListViewAdapter {
       const max = min + this._maxToDisplay;
       this._elementDisplayed = this._elementDisplayed.concat(this._elementList.slice(min, max));
     }
-    console.log('array size: '+ this._elementDisplayed.length);
     return this._elementDisplayed;
   }
 

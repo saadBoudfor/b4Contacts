@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {ContactHandlerService} from "../../../services/handlers/contacthandler.service";
 import {Action} from "../../../services/models/Action";
 import {Contact} from "../../../services/models/Contact";
@@ -11,6 +11,8 @@ import {ListViewAdapter} from "./ListViewAdapter";
   styleUrls: ['./contact-view.component.scss']
 })
 export class ContactViewComponent implements OnInit {
+  @Input()
+  public height: string;
   public contactList: Array<Contact>;
   public contactWrapper: ListViewAdapter;
   public actions: Array<Action> = [
@@ -38,7 +40,6 @@ export class ContactViewComponent implements OnInit {
      * TODO: (before commit)
      *  - compute dynamically how much contact element can be displayed in a scroll container.
      *  - test result on mobile device.
-     *  - move this code inside a separated function ?
      * @type {HTMLElement|any}
      */
     const scrollContainerElement = document.getElementById('scroll-container');

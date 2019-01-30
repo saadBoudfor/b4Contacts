@@ -4,6 +4,7 @@ import {ContactHandlerService} from "../../../services/handlers/contacthandler.s
 import {Contact} from "../../../services/models/Contact";
 import * as L from 'leaflet';
 import {HttpClient} from "@angular/common/http";
+import {CoreService} from "../../../services/handlers/core.service";
 
 @Component({
   selector: 'contact-detail-screen',
@@ -17,7 +18,8 @@ export class ContactDetailScreenComponent implements OnInit {
 
   public contact: Contact;
 
-  constructor(public _contactHandler: ContactHandlerService, public http: HttpClient) { }
+  constructor(public _contactHandler: ContactHandlerService, public http: HttpClient) {
+  }
 
   ngOnInit() {
     console.log(this.contactID);
@@ -42,7 +44,10 @@ export class ContactDetailScreenComponent implements OnInit {
       myfrugalmap.setView([podotactile.geometry.coordinates[1], podotactile.geometry.coordinates[0]], 17);
 
     });
+  }
 
+  backToContactsView() {
+    CoreService.currentPage.next({id: CoreService.components.contacts_list, params: null})
   }
 
 }

@@ -1,9 +1,12 @@
 <header class="container">
-  <div class="flex left">
-    <button>
+  <nav>
+    <button class="right">
       Modifier <i class="fas fa-pen"></i>
     </button>
-  </div>
+    <button class="left" (click)="backToContactsView()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </nav>
   <div class="flex center">
     <div class="flex wrapper image">
       <p class="title">{{_contactHandler.getInitial(contact)}}</p>

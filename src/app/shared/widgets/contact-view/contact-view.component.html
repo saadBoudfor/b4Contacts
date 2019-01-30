@@ -1,4 +1,4 @@
-<scroll-container [height]="'calc(100vh - 166px)'">
+<scroll-container [height]="height">
   <list-view-item
     *ngFor="let contact of contactList"
     [content]=contactHandler.getDisplayName(contact)
