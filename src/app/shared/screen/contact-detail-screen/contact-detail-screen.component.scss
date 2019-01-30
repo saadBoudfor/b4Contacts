@@ -1,54 +1,5 @@
 @import "../../../../libs/variables";
 
-$circle-size: 120px;
-
-header {
-  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  div.title {
-    font-weight: bold;
-    padding: 20px 20px 7px;
-    text-align: center;
-  }
-  nav {
-    min-height: 50px;
-    button {
-      background: $white;
-      color: darken($gray, 30%);
-      font-size: 13px;
-      padding: 5px 10px;
-      &:hover {
-        background: $secondary;
-        color: $white;
-      }
-      &.left {
-        float: left;
-        i.fas.fa-arrow-left {
-          font-size: 24px;
-          color: $primary;
-          position: relative;
-        }
-      }
-      &.right {
-        float: right;
-      }
-    }
-  }
-
-  div.wrapper.image {
-    background: $primary;
-    color: white;
-    border-radius: 50%;
-    width: $circle-size;
-    height: $circle-size;
-    p.title {
-      margin: auto;
-      text-align: center;
-      font-size: 35px;
-      font-weight: bold;
-    }
-  }
-}
-
 main {
   div#frugalmap {
     height: 300px;

@@ -14,6 +14,7 @@ import { ContactDetailScreenComponent } from './shared/screen/contact-detail-scr
 import {HttpClientModule} from "@angular/common/http";
 import { CmButtonComponent } from './shared/component/cm-button/cm-button.component';
 import { ScrollContainerComponent } from './shared/component/scroll-container/scroll-container.component';
+import { AvatarHeaderComponent } from './shared/widgets/avatar-header/avatar-header.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ScrollContainerComponent } from './shared/component/scroll-container/sc
     ContactScreenComponent,
     ContactDetailScreenComponent,
     CmButtonComponent,
-    ScrollContainerComponent
+    ScrollContainerComponent,
+    AvatarHeaderComponent
   ],
   imports: [
     BrowserModule,

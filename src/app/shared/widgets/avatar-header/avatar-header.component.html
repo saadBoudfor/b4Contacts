@@ -1,0 +1,19 @@
+<header class="container">
+  <nav>
+    <button class="right" (click)="updateClickedEvent()">
+      Modifier <i class="fas fa-pen"></i>
+    </button>
+    <button class="left" (click)="backClickedEvent()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </nav>
+  <div class="flex center">
+    <div class="flex wrapper image">
+      <p class="title">{{initial}}</p>
+    </div>
+  </div>
+
+  <div class="flex center title">
+    <p>{{formattedName}}</p>
+  </div>
+</header>

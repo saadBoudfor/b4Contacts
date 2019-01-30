@@ -50,4 +50,7 @@ export class ContactDetailScreenComponent implements OnInit {
     CoreService.currentPage.next({id: CoreService.components.contacts_list, params: null})
   }
 
+  UpdateContact() {
+    console.log('contact clicked !');
+  }
 }
