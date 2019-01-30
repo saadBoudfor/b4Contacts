@@ -1,16 +1,9 @@
 div.contact-page {
-  height: 100vh;
-  display: flex;
-  flex-flow: column;
-  contact-view {
-    margin-top: 166px;
-  }
+  overflow: hidden;
   search-header {
     height: 165px;
-    width: 100%;
-    position: fixed;
-    z-index: 800;
-    top: 0;
-    background: white;
+  }
+  scroll-container{
+    height: calc(100% - 166px);
   }
 }

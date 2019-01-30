@@ -1,4 +1,4 @@
-import {Component, OnInit, HostListener} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ContactHandlerService} from "../../../services/handlers/contacthandler.service";
 import {Action} from "../../../services/models/Action";
 import {Contact} from "../../../services/models/Contact";
@@ -25,24 +25,31 @@ export class ContactViewComponent implements OnInit {
   ngOnInit() {
     CoreService.searchString.subscribe(searchString => {
       this.contactHandler.contacts.subscribe((contacts) => {
-        const searchResult = contacts.filter(this.contactHandler.filterBySearchString(searchString));
+        let searchResult = contacts.filter(this.contactHandler.filterBySearchString(searchString));
         if (searchString === '') {
           searchResult = contacts;
         }
-        this.contactWrapper = new ListViewAdapter(searchResult, 12);
+        this.contactWrapper = new ListViewAdapter(searchResult, 15);
         this.contactList = this.contactWrapper.nextElement;
       });
     });
-  }
 
-  @HostListener("window:scroll", [])
-  onScroll(): void {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      // you're at the bottom of the page
-      if (this.contactWrapper.hasNext) {
-        this.contactList = this.contactWrapper.nextElement;
+    /**
+     * TODO: (before commit)
+     *  - compute dynamically how much contact element can be displayed in a scroll container.
+     *  - test result on mobile device.
+     *  - move this code inside a separated function ?
+     * @type {HTMLElement|any}
+     */
+    const scrollContainerElement = document.getElementById('scroll-container');
+    scrollContainerElement.addEventListener('scroll', () => {
+      if ((scrollContainerElement.offsetHeight + scrollContainerElement.scrollHeight) >= document.body.offsetHeight) {
+        // you're at the bottom of the page
+        if (this.contactWrapper.hasNext) {
+          this.contactList = this.contactWrapper.nextElement;
+        }
       }
-    }
+    })
   }
 
   onClick(action) {

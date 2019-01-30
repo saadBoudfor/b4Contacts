@@ -1,14 +1,14 @@
-<div class="contact-list">
-    <list-view-item
-      *ngFor="let contact of contactList"
-      [content]=contactHandler.getDisplayName(contact)
-      [icon]=contactHandler.getInitial(contact)
-      [actions]=actions
-      [id]="contact.id"
-      (actionClickedEvent)=onClick($event)
-      (itemClickedEvent)=onContactClick($event)
-    ></list-view-item>
-</div>
+<scroll-container [height]="'calc(100vh - 166px)'">
+  <list-view-item
+    *ngFor="let contact of contactList"
+    [content]=contactHandler.getDisplayName(contact)
+    [icon]=contactHandler.getInitial(contact)
+    [actions]=actions
+    [id]="contact.id"
+    (actionClickedEvent)=onClick($event)
+    (itemClickedEvent)=onContactClick($event)
+  ></list-view-item>
+</scroll-container>
 
 
 

@@ -13,6 +13,7 @@ import { ContactScreenComponent } from './shared/screen/contact-screen/contact-s
 import { ContactDetailScreenComponent } from './shared/screen/contact-detail-screen/contact-detail-screen.component';
 import {HttpClientModule} from "@angular/common/http";
 import { CmButtonComponent } from './shared/component/cm-button/cm-button.component';
+import { ScrollContainerComponent } from './shared/component/scroll-container/scroll-container.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CmButtonComponent } from './shared/component/cm-button/cm-button.compon
     SearchHeaderComponent,
     ContactScreenComponent,
     ContactDetailScreenComponent,
-    CmButtonComponent
+    CmButtonComponent,
+    ScrollContainerComponent
   ],
   imports: [
     BrowserModule,

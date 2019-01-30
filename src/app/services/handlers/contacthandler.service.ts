@@ -12,7 +12,7 @@ export class ContactHandlerService {
   public _contacts = new BehaviorSubject<Array<Contact>>([]);
 
   constructor() {
-    this._contacts.next(ContactsMock.contacts)
+    this._contacts.next(ContactsMock.contacts.filter(this.filterBySupportedContacts))
   }
 
   getDisplayName(contact: Contact): string {
@@ -37,6 +37,10 @@ export class ContactHandlerService {
 
   public get contacts(): BehaviorSubject<Array<Contact>> {
     return this._contacts;
+  }
+
+  public filterBySupportedContacts(contact) {
+    return contact && contact.name && contact.name.formatted;
   }
 
   filterBySearchString(searchString: string) {
